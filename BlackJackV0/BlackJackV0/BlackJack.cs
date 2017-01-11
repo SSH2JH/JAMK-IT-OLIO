@@ -12,16 +12,19 @@ namespace JAMK.IT {
 	class BlackJack {
 		static void Main()
 		{
-			int myNumber = 17;
+			int myNumber;
+			int theirNumber;
+			string UserInput;
+			bool isNumeric;
+			Random rnd = new Random();
+			myNumber = rnd.Next(10,21);
 			while (true) {
-				int theirNumber;
-				string UserInput;
 				System.Console.WriteLine("*** BlackJack! ***");
 				System.Console.Write("Can you beat my number? Enter any number between 1-21: ");
 				//reading and converting 
 				UserInput = System.Console.ReadLine();
 				//comparing that given umber is valid
-				bool isNumeric = int.TryParse(UserInput, out theirNumber);
+				isNumeric = int.TryParse(UserInput, out theirNumber);
 				if (isNumeric == true) {
 					if (theirNumber < 1 || theirNumber > 21) {
 						Console.WriteLine("The given number is out of limits, try again.");
