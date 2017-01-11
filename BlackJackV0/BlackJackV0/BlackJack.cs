@@ -12,6 +12,29 @@ namespace JAMK.IT {
 	class BlackJack {
 		static void Main()
 		{
+			string userInput;
+			int i = 1;
+			while (i == 1) {
+				Console.Write("\nWhich game do you wish to play (1) Lotto or (2) BlackJack (x) Exit >");
+				userInput = Console.ReadLine();
+				switch (userInput) {
+					case "1":
+						JAMK.IT.Lotto.LottoGame();
+						break;
+					case "2":
+						BlackJackGame();
+						break;
+					case "x":
+						i = 0;
+						break;
+					default:
+						Console.WriteLine("Wrong input!");
+						break;
+				}
+			}
+		}
+		static void BlackJackGame()
+		{
 			int myNumber;
 			int theirNumber;
 			string UserInput;
